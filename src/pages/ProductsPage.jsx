@@ -1,7 +1,7 @@
-
-import DynamicDropdown from "../Components/DynamicDropdown"
+import React from 'react'
 import { useState } from "react";
 import ProductCard from "../Components/ProductCard";
+import DynamicDropdown from '../Components/DynamicDropdown';
   const products = [
         {
             id: 1,
@@ -89,7 +89,7 @@ import ProductCard from "../Components/ProductCard";
         { value: "Price", label: "Price" },
     ]
 
-export default function ProductsPage() { 
+function ProductsPage() { 
     const [productList, setProductList] = useState(products);   
     const [selectedCategory, setSelectedCategory] = useState("")
     const [selectedName, setSelectedName] = useState("")
@@ -164,13 +164,13 @@ export default function ProductsPage() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  border align-middle rounded bg-blue-900 justify-center mb-8 mx-8 p-4 ">
                 <div className="w-full md:w-1/2 mx-auto md:p-0 p-2">
-                    {<DynamicDropdown item={categoryList} onData={searchProductsByCategory} name='Select Category' />}
+                    <DynamicDropdown item={categoryList} onData={searchProductsByCategory} name='Select Category' />
                 </div>
                 <div className="w-full md:w-3/4 mx-auto md:p-0 p-2">
                     <input type="text" name="search" value={selectedName} className="w-full md:w-3/4" id="search" placeholder="Search By Name" onChange={searchProductByName} />
                 </div>
                 <div className="w-full md:w-1/2 mx-auto md:p-0 p-2">
-                    {<DynamicDropdown item={sortByList} onData={sortProductList} name='Sort By' />}
+                    <DynamicDropdown item={sortByList} onData={sortProductList} name='Sort By' />
                 </div>
 
             </div>
@@ -183,3 +183,4 @@ export default function ProductsPage() {
         </div>
     )
 }
+export default ProductsPage

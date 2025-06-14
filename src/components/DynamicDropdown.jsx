@@ -1,3 +1,5 @@
+import React from 'react'
+
 function DynamicDropdown(props) {
     const options = props.item
     const optionCategory = props.name

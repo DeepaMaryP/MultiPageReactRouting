@@ -1,6 +1,7 @@
-import Product from "../Components/ProductCard"
+
 import Category from "../Components/DynamicDropdown"
 import { useState } from "react";
+import ProductCard from "../Components/ProductCard";
   const products = [
         {
             id: 1,
@@ -175,7 +176,7 @@ export default function ProductsPage() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center md:justify-between mx-6 p-2 mt-6">
                 {
-                    productList.map(item => { return <Product key={item.id} item={item} /> })
+                    productList.map(item => { return <ProductCard key={item.id} item={item} /> })
                 }
 
             </div>
